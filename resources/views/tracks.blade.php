@@ -1,10 +1,9 @@
 @extends('layout')
 
-@section('title')
-Tracks
-@endsection
+@section('title', 'Tracks')
 
 @section('main')
+<a href="/tracks/new" class="btn btn-primary my-2">Add Track</a>
 <table class="table">
 	<tr>
 		<th>Track Name</th>

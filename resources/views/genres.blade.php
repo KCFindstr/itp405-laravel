@@ -14,6 +14,7 @@ Genres
 	<tr>
 		<td>
 			{{ $genre->GenreId }}
+			<a href="/genres/{{ $genre->GenreId }}/edit">Edit</a>
 		</td>
 		<td>
 			<a href="tracks?genre={{ urlencode($genre->Name) }}">
