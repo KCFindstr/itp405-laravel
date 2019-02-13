@@ -26,16 +26,16 @@ class GenresController extends Controller {
 	public function store(Request $request) {
 		$input = $request->all();
 
-    $validation = Validator::make($input, [
+	$validation = Validator::make($input, [
 			'name' => 'required|min:3|unique:genres,Name',
 			'id' => 'required'
-    ]);
+	]);
 
-    if ($validation->fails()) {
+	if ($validation->fails()) {
 			return redirect('/genres/' . $request->id . '/edit')
 				->withInput()
 				->withErrors($validation);
-    }
+	}
 		
 		DB::table('genres')
 			->where('GenreId', '=', $request->id)
@@ -43,6 +43,6 @@ class GenresController extends Controller {
 				'Name' => $request->name
 			]);
 		
-    return redirect('/genres');
+	return redirect('/genres');
   }
 }

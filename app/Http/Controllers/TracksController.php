@@ -42,7 +42,7 @@ class TracksController extends Controller {
 	public function store(Request $request) {
 		$input = $request->all();
 
-    $validation = Validator::make($input, [
+	$validation = Validator::make($input, [
 			'name' => 'required',
 			'album' => 'required',
 			'media_type' => 'required',
@@ -51,13 +51,13 @@ class TracksController extends Controller {
 			'milliseconds' => 'required|numeric',
 			'bytes' => 'required|numeric',
 			'unit_price' => 'required|numeric'
-    ]);
+	]);
 
-    if ($validation->fails()) {
+	if ($validation->fails()) {
 			return redirect('/tracks/new')
 				->withInput()
 				->withErrors($validation);
-    }
+	}
 		
 		DB::table('tracks')->insert([
 			'Name' => $request->name,
@@ -70,6 +70,6 @@ class TracksController extends Controller {
 			'UnitPrice' => $request->unit_price
 		]);
 		
-    return redirect('/tracks');
+	return redirect('/tracks');
   }
 }
