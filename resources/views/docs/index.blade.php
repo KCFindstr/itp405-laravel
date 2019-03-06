@@ -18,7 +18,7 @@
 		}
 	</style>
 	<script>
-		let connection = new WebSocket('ws://changyuz-websocket.herokuapp.com');
+		let connection = new WebSocket('wss://changyuz-websocket.herokuapp.com');
 		$(document).ready(() => {
 			let docs = document.getElementById('docs');
 			docs.oninput = () => {
