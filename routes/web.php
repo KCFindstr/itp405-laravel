@@ -33,3 +33,5 @@ Route::middleware(['authenticated'])->group(function() {
 	Route::get('/settings', 'AdminController@settings');
 	Route::post('/settings', 'AdminController@update');
 });
+
+Route::get('/docs', 'DocsController@index');
